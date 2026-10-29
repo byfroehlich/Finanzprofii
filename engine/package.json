@@ -1,0 +1,23 @@
+{
+  "name": "@zentrale/engine",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "zentrale": "./bin/zentrale.mjs"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "cli": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "@zentrale/core": "*",
+    "nodemailer": "^10.3.1",
+    "tsx": "^4.23.15",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.2",
+    "@types/web-push": "^3.6.4"
+  }
+}

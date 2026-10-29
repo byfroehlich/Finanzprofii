@@ -1,0 +1,22 @@
+{
+  "konten": [
+    { "id": "giro", "name": "Hauptkonto", "bank": "Bank A", "art": "giro", "bereich": "privat", "saldo": 0, "saldoDatum": "2026-10-27", "puffer": 30000, "quelle": "fints" },
+    { "id": "haus", "name": "Hauskonto", "bank": "Bank B", "art": "giro", "bereich": "vermietung", "saldo": 0, "saldoDatum": "2026-10-27", "puffer": 50000, "quelle": "csv" },
+    { "id": "firma", "name": "Geschäftskonto", "bank": "Bank C", "art": "geschaeft", "bereich": "gbr", "saldo": 0, "saldoDatum": "2026-10-27", "liquide": false, "quelle": "api" }
+  ],
+  "vertraege": [
+    { "id": "beispiel-leasing", "name": "Leasing Beispiel", "gegenpartei": "Leasingbank", "kontoId": "giro", "betrag": -38900, "rhythmus": "monat", "naechsteFaelligkeit": "2026-11-01", "ende": null, "art": "leasing", "bereich": "privat", "werktag": true, "muster": ["leasingbank"], "aktiv": true }
+  ],
+  "verbindlichkeiten": [
+    { "id": "beispiel-rueckstand", "glaeubiger": "Händler", "betragOffen": 44142, "status": "rueckstand", "faellig": "2026-11-05", "notiz": "", "planpostenId": null }
+  ],
+  "fristen": [
+    { "id": "ust-q4", "titel": "Umsatzsteuer-Voranmeldung GbR", "datum": "2027-01-10", "art": "frist", "bereich": "gbr" }
+  ],
+  "toepfe": [
+    { "name": "Winterpolster", "ziel": 300000, "stand": 0, "zieldatum": null, "prioritaet": 3, "notiz": "" }
+  ],
+  "regeln": [
+    { "muster": ["airbnb"], "richtung": "ein", "bereich": "vermietung", "kategorie": "auszahlung", "erklaerung": "Auszahlung Airbnb über {betrag}." }
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.local
+# Persönliche Daten gehören in die Datenbank, nie ins Repo
+daten/
+*.csv
+!core/test/fixtures/*.csv

@@ -1,0 +1,26 @@
+# /etc/systemd/system/zentrale-engine.service
+[Unit]
+Description=Zentrale Engine (Aufträge, Freigaben, Abrufe, Warnungen)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=zentrale
+Group=zentrale
+WorkingDirectory=/srv/zentrale/app/engine
+ExecStart=/usr/bin/npx tsx src/main.ts
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+# Härtung: nur die eigenen Ordner sind beschreibbar
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/srv/zentrale /home/zentrale/.claude /home/zentrale/.claude.json /home/zentrale/.npm
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target

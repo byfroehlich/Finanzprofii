@@ -1,0 +1,17 @@
+{
+  "name": "zentrale",
+  "private": true,
+  "type": "module",
+  "workspaces": ["core", "engine", "web"],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p core && tsc -p engine && tsc -p web",
+    "build": "npm run typecheck && npm run build -w web",
+    "check": "npm run typecheck && npm test && npm run build -w web"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.12"
+  }
+}
